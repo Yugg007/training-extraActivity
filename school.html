@@ -68,10 +68,12 @@
 
         $( document ).ready(function() {
             showResult("Maths");
+            document.getElementById('spanID').innerHTML = `Username : ${localStorage.getItem('name')}`;
         });
     </script>
     <header >
         <img src="https://media.istockphoto.com/id/1311655397/vector/education-and-graduation-logo-design-vector.jpg?s=612x612&w=0&k=20&c=HLS9vxbhMsnjTv8J4Hncg01rPLySV0E-QxvY_H0BHoU=" alt="School Logo">
+        <span id="spanID"></span>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>

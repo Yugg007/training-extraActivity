@@ -58,10 +58,11 @@
 
         $( document ).ready(function() {
             showResult();
+            document.getElementById('spanID').innerHTML = `Username : ${localStorage.getItem('name')}`;
         });
-
     </script>
     <header>
+        <span id="spanID"></span>
         <a href="./school.html" style="text-decoration: none; margin-left: 80%;">    
             Go To Home Page
         </a>   

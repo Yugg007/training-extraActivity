@@ -49,6 +49,7 @@
             } else {
                 users.push({ email: inputEmail, password: inputPassword });
                 localStorage.setItem('users', JSON.stringify(users));
+                localStorage.setItem('name', inputEmail);
                 window.location.href = "./school.html";
             }
         }
@@ -65,6 +66,7 @@
             });
 
             if (existingUser) {
+                localStorage.setItem('name', inputEmail);
                 window.location.href = "./school.html";
             } else {
                 alert("Credentials are wrong!!");

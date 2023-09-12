@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Extra Activity</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        var extraActivity = [
+            {
+                extraActivityName : "Reading Club",
+                extraActivityDescription : "This is a group activity where students gather to read and discuss various books. It helps in improving vocabulary and comprehension skills."
+            },
+            {
+                extraActivityName : "Art Class",
+                extraActivityDescription : "In this activity, students learn about different art techniques and create their own artwork. It encourages creativity and self-expression."
+            },
+            {
+                extraActivityName : "Sports Practice",
+                extraActivityDescription : "This could be practice sessions for various sports like soccer, basketball, or badminton. It promotes physical fitness and teamwork."
+            }
+        ]
+
+        function showResult(subjectName) {
+            var activitiesDiv = document.getElementById('extraActivities');
+            activitiesDiv.innerHTML = '';
+            
+            extraActivity.forEach(function(activity) {
+                var activityElement = document.createElement('div');
+                activityElement.className = 'activity-card';
+                activityElement.innerHTML = `
+                <p><b>Extra Activity Name: </b>${activity.extraActivityName}</p>
+                <p><b>Extra Activity Description : </b>${activity.extraActivityDescription}</p>
+                <br />
+                `;
+                activitiesDiv.appendChild(activityElement);
+            });
+        }
+
+        function handleSubmit(){
+            console.log("asdfjdsjf");
+            let name = $('input#activity').val();
+            let description = $('input#description').val();
+            if(name != "" && description != ""){
+                let item = {
+                    extraActivityName : name,
+                    extraActivityDescription : description
+                }
+                extraActivity.push(item);
+                console.log(extraActivity);
+                showResult();
+            }
+        }
+
+        $( document ).ready(function() {
+            showResult();
+        });
+
+    </script>
+    <header>
+        <a href="./school.html" style="text-decoration: none; margin-left: 80%;">    
+            Go To Home Page
+        </a>   
+    </header>
+    <div style="width: auto;">
+        <h1>Extra Activity</h1>
+        <label for="activity">Activity Name:</label><br>
+        <input type="text" id="activity"><br>
+        <label for="description">Description:</label><br>
+        <input id="description"><br><br>
+        <button onclick="handleSubmit()">Add New Activity</button>
+        <br />
+        <br />
+        <h2>Extra Activities</h2>
+        <div id="extraActivities"></div>
+    </div>
+
+
+</body>
+</html>
+
+
+
